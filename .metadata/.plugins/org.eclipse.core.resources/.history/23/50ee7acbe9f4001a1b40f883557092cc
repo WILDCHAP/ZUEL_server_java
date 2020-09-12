@@ -1,0 +1,14 @@
+package com.wildchap.view;
+import com.wildchap.customers.*;
+import com.wildchap.utils.*;
+/**
+ * 
+ * @description 
+ * @wang 993704315@qq.com
+ * @params
+ * @method
+ * @return
+ */
+public class CustomerSys {
+
+}

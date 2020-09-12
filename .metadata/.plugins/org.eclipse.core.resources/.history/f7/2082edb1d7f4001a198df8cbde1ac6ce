@@ -1,0 +1,31 @@
+package com.wildchap.customers;
+import com.wildchap.bean.*;
+import java.util.Scanner;
+
+public class CustomersList {
+	private Customer[] customers = new Customer[100];
+	Scanner scan = new Scanner(System.in);
+	//实现新增、修改和删除客户信息
+	public CustomersList() {
+		
+	}
+	//新增
+	public void addCustomer() {
+		Customer c = new Customer();
+		System.out.print("姓名：");
+		String name = scan.next();
+		c.setName(name);
+		System.out.print("性别：");
+		String sex = scan.next();
+		c.setSex(sex);
+		System.out.print("年龄：");
+		int age = scan.nextInt();
+		c.setAge(age);
+		System.out.print("电话：");
+		String phone = scan.next();
+		c.setPhone(phone);
+		System.out.print("邮箱：");
+		String email = scan.next();
+		c.setEmail(email);
+	}
+}

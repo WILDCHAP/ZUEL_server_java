@@ -1,0 +1,30 @@
+package com.wildchap.utils;
+import java.util.Scanner;
+/**
+ * 
+ * @description 
+ * @wang 993704315@qq.com
+ * @params
+ * @method
+ * @return
+ */
+public class CustomerUtils {
+	Scanner scan = new Scanner(System.in);
+	public CustomerUtils() {
+		
+	}
+	/**
+	 * 获取用户输入信息，返回合法的选择值
+	 */
+	public int getMenuChoice() {
+		for(;;) {
+			String s = scan.next();
+			ch = s.charAt(0);
+			if(ch!='1' && ch!='2' && ch!='3' && ch!='4'
+					&& ch!=5)
+				System.out.print("请输入合法选择：");
+			else
+				break;
+		}
+	}
+}

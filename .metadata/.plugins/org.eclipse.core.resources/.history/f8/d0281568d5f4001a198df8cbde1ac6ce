@@ -1,0 +1,9 @@
+package com.wildchap.bean;
+
+public class Customer {
+	private
+	public Customer(){
+		
+	}
+	
+}

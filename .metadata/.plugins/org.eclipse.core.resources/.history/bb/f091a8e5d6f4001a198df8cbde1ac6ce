@@ -1,0 +1,17 @@
+package com.wildchap.customers;
+import com.wildchap.bean.*;
+import java.util.Scanner;
+
+public class CustomersList {
+	private Customer[] customers = new Customer[100];
+	Scanner scan = new Scanner(System.in);
+	//实现新增、修改和删除客户信息
+	public CustomersList() {
+		
+	}
+	//新增
+	public void addCustomer() {
+		Customer 
+		System.out.print("");
+	}
+}

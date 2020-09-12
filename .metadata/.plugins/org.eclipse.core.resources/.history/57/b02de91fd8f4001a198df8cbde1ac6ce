@@ -1,0 +1,34 @@
+package com.wildchap.utils;
+
+import com.wildchap.bean.Customer;
+import java.util.Scanner;
+/**
+ * 
+ * @wang 993704315@qq.com
+ *
+ */
+public class CustomerUtil {
+	public CustomerUtil() {
+		
+	}
+	//获取用户输入的一条信息
+	public Customer getCustomerInfo() {
+		Customer c = new Customer();
+		System.out.print("姓名：");
+		String name = scan.next();
+		c.setName(name);
+		System.out.print("性别：");
+		String sex = scan.next();
+		c.setSex(sex);
+		System.out.print("年龄：");
+		int age = scan.nextInt();
+		c.setAge(age);
+		System.out.print("电话：");
+		String phone = scan.next();
+		c.setPhone(phone);
+		System.out.print("邮箱：");
+		String email = scan.next();
+		c.setEmail(email);
+		return c;
+	}
+}

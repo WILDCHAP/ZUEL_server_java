@@ -1,0 +1,13 @@
+package com.wildchap.utils;
+import java.util.Scanner;
+/**
+ * 
+ * @description 
+ * @wang 993704315@qq.com
+ * @params
+ * @method
+ * @return
+ */
+public class CustomerUtils {
+	
+}

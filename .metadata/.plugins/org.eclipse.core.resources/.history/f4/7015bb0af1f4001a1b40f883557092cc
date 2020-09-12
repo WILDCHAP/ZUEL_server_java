@@ -1,0 +1,115 @@
+package com.wildchap.view;
+import com.wildchap.bean.*;
+import com.wildchap.customers.*;
+import com.wildchap.utils.*;
+/**
+ * 
+ * @description 
+ * @wang 993704315@qq.com
+ * @params
+ * @method
+ * @return
+ */
+public class CustomerSys {
+	private static int std_length = 1000;	//暂定1000个学生最多
+	public static void main(String[] args) {
+		CustomerSys sys = new CustomerSys();
+		//初始化用户数组
+		CustomersList clist = new CustomersList(std_length);
+		//实例化方法类
+		CustomerUtils cutil = new CustomerUtils();
+		while(true) {
+			//准备用于接收信息的元素
+			String name;
+			String sex;
+			int age;
+			String phone;
+			String email;
+			//展现主界面
+			sys.showMain();
+			//获取用户选择
+			int choice = cutil.getMenuChoice();
+			switch(choice){
+				case 1:
+					Customer[] cs = clist.selectAll();
+					sys.showDetil(cs);
+					break;
+				case 2:		//插入信息
+					System.out.print("姓名：");
+					name = cutil.getStringInfo();
+					System.out.print("性别：");
+					sex = cutil.getStringInfo();
+					System.out.print("年龄：");
+					age = cutil.getIntInfo();
+					System.out.print("电话：");
+					phone = cutil.getStringInfo();
+					System.out.print("邮箱：");
+					email = cutil.getStringInfo();
+					Customer c_1 = new Customer(name, sex, age, phone, email);
+					//添加
+					boolean ans_1 = clist.addCustomer(c_1);
+					if(!ans_1)
+						System.out.println("添加失败。");
+					else {
+						//修改当前用户数
+						clist.alterNum(1);
+						System.out.println("添加成功。");
+					}
+					break;
+				case 3:
+					//先获取之前的值
+					Customer[] std_clist = clist.selectAll();
+					System.out.print("请输入要修改的索引号：");
+					int key = cutil.getIntInfo();
+					System.out.print("姓名：");
+					name = cutil.getStringInfo(std_clist[key].getName());
+					System.out.print("性别：");
+					sex = cutil.getStringInfo(std_clist[key].getSex());
+					System.out.print("年龄：");
+					age = cutil.getIntInfo(std_clist[key].getAge());
+					System.out.print("电话：");
+					phone = cutil.getStringInfo(std_clist[key].getPhone());
+					System.out.print("邮箱：");
+					email = cutil.getStringInfo(std_clist[key].getEmail());
+					Customer c_2 = new Customer(name, sex, age, phone, email);
+					boolean ans_2 = clist.alterCustomer(c_2, key);
+					if(!ans_2)
+						System.out.println("修改失败。");
+					else
+						System.out.println("修改成功。");
+					break;
+				case 4:
+					int ans_3 = cutil.getYesOrNo();
+					if(ans_3 == 1)
+						return;
+					break;
+			}
+		}
+	}
+	/**
+	 * 主界面
+	 */
+	public void showMain() {
+		System.out.println("****************************************************");
+		System.out.println("				1. 查看信息");
+		System.out.println("				2. 插入信息");
+		System.out.println("				3. 修改信息");
+		System.out.println("				4. 删除信息");
+		System.out.println("				5. 退出");
+		System.out.print("		请输入你的选择：");
+	}
+	/**
+	 * 显示所有有用户信息
+	 * @param cs
+	 */
+	public void showDetil(Customer[] cs) {
+		System.out.println("****************************************************");
+		System.out.println("编号\t姓名\t性别\t年龄\t电话\t邮箱");
+		for(int i=0; i<cs.length; i++)
+			System.out.println(i + '\t' + cs[i].getName() + '\t'
+						+ cs[i].getSex() + '\t'
+						+ cs[i].getAge() + '\t'
+						+ cs[i].getPhone() + '\t'
+						+ cs[i].getEmail());
+	}
+}

@@ -1,0 +1,29 @@
+package com.wildchap.view;
+import java.nio.channels.ShutdownChannelGroupException;
+
+import com.wildchap.customers.*;
+import com.wildchap.utils.*;
+/**
+ * 
+ * @description 
+ * @wang 993704315@qq.com
+ * @params
+ * @method
+ * @return
+ */
+public class CustomerSys {
+	public static void main(String[] args) {
+		showMain();
+	}
+	/**
+	 * 主界面
+	 */
+	public void showMain() {
+		System.out.println("**********************************");
+		System.out.println("				1. 查看信息");
+		System.out.println("				2. 插入信息");
+		System.out.println("				3. 修改信息");
+		System.out.println("				4. 删除信息");
+		System.out.println("				5. 退出");
+	}
+}
